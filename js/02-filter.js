@@ -42,23 +42,21 @@ const tech = [
 //   input: document.querySelector('#filter'),
 // };
 
+// 2. Пишем функцию в которую будем передавать, то что нам необходио зарендерить:
+// Меппним эти items после чего будем передавать большую строку с кучей li внутри:
+// function createListItemsMarkup(items) {
+//   return items.map(item => `<li>${item.label}</li>`).join('');
+// }
+
 // 3. Переменная для приема результата функции
 // const listItemsMarkup = createListItemsMarkup(tech); // создадим переменную в которую будем возвращать результат
 // нашей функции, т.е. огромную строку с кучей li
-
-
 
 // 4. После чего повесим нашу строку в наш ul:
 // НО используем не Element.insertAdjacentHTML() - который используем тогда когда в нашем объекте уже что то есть, 
 // а простой innerHTML т.к.у нас пустой ul
 
 // refs.list.innerHTML = listItemsMarkup;
-
-// 2. Пишем функцию в которую будем передавать, то что нам необходио зарендерить:
-// Меппним эти items после чего будем передавать большую строку с кучей li внутри:
-// function createListItemsMarkup(items) {
-//   return items.map(item => `<li>${item.label}</li>`).join('');
-// }
 
 // 5. Далее мы хотим слушать наш инпут и в зависимости от того что мы будем в него вводить, фильтровать наш li и выводить
 // в результат только те значение li в тексте, которых есть значение введенное в наш инпут:
@@ -136,7 +134,7 @@ const tech = [
 //   return items.map(item => `<li>${item.label}</li>`).join('');
 // }
 
-// А далее уже каждый раз когда у нас меняется событие, (т.е.срабатывет refs.input.addEventListener('input', onFilterChange);), т.е.огда пользователь
+// А далее уже каждый раз когда у нас меняется событие, (т.е.срабатывет refs.input.addEventListener('input', onFilterChange);), т.е. когда пользователь
 // продолжает вводить данные в инпут, у нас менется фильтр, мы берем из этого фильтра значение const filter = evt.target.value.toLowerCase();
 // далее берем весь массив данных(объектов)   const filteredItems = tech.filter(t => t.label.toLowerCase().includes(filter),); и у него отфильтровываем
 // только те элементы t.label.toLowerCase(), которые содержат текущеее значение свойства лейбл.includes(filter) и далее делаем то же самое:
